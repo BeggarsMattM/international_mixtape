@@ -41,7 +41,12 @@ class SpotifyController extends Controller
 
       session(['refreshToken' => $this->session->getRefreshToken()]);
 
-      return view('mixtape')->with('access_token', $accessToken);
+      $user_id = $this->api->me()->id;
+
+      $playlists = $this->api->getUserPlaylists($user_id, []);
+
+      return view('mixtape')->with('access_token', $accessToken)
+	->with('playlists', $playlists);
 
     }
 
