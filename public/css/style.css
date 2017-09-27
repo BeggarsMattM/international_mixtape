@@ -1,0 +1,230 @@
+html {
+  font-family: "proxima-nova",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  display: table;
+}
+
+.center-wrap {
+  text-align: center;
+  margin: auto;
+  width: 90%;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.center-wrap .next-btn {
+  padding:8px 20px;
+  display: inline-block;
+  color:#fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin:30px auto 80px;
+}
+
+.title-text {
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 88px;
+  margin:0px auto;
+}
+
+.description {
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  width: 100%;
+  max-width: 700px;
+  margin:5px auto;
+}
+
+.fixed .corner {
+  padding:20px;
+  position: absolute;
+}
+
+.fixed .top-left {
+  top:0px;
+  left:0px;
+  z-index: 2;
+}
+
+.fixed .top-left img {
+  width: 150px;
+}
+
+.fixed .top-right {
+  top:0px;
+  right:0px;
+  z-index: 2;
+}
+
+.fixed .top-right a {
+  padding:8px 20px;
+  display: inline-block;
+  color:#fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  border-radius: 20px;
+}
+
+.fixed .bottom-right {
+  bottom:0px;
+  right:0px;
+  z-index: 2;
+}
+
+.fixed .bottom-right a {
+  color:#000;
+  font-size: 14px;
+}
+
+.fixed .bottom-left {
+  bottom:0px;
+  left:0px;
+  z-index: 2;
+}
+
+.section-header {
+  margin-bottom: 25px;
+}
+
+.section-number {
+  padding: 10px 18px;
+  font-size: 18px;
+  margin: 0px 10px;
+  width: 10px;
+  border-radius: 50%;
+  color: #fff;
+  background: #000;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.section-title {
+  display: inline-block;
+  vertical-align: middle;
+  margin:0px 10px;
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 65px;
+}
+
+.center-content {
+  margin:20px auto;
+}
+
+.playlist-box {
+  border:2px solid #000;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 300px;
+  overflow-y: scroll;
+  padding:5px 10px;
+}
+
+.playlist-box p {
+  margin:0px;
+  padding:20px;
+}
+
+.playlist-list {
+  padding:0px;
+  list-style: none;
+  margin:0px;
+}
+
+.playlist-list li {
+  padding: 8px 20px;
+  border-top:2px solid #000;
+  text-align: left;
+}
+
+.or-text {
+  display: inline-block;
+  margin:0px;
+  padding:20px;
+  vertical-align: middle;
+}
+
+.uri-input {
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding:6px;
+  width: calc(100% - 44px);
+}
+
+.uri-submit {
+  font-family: "proxima-nova",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  padding:6px 20px;
+  display: inline-block;
+  color:#fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  border:0px;
+  margin:20px auto;
+}
+
+.center-select-region {
+  height: 50vh;
+  width: 100%;
+  background: url('../img/map.jpg') no-repeat center center;
+  background-size: auto 100%;
+  position: relative;
+  margin:0px auto;
+}
+
+.country-select-form {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.country-select-form select {
+  width: 100%;
+  max-width: 340px;
+  border: 5px solid transparent;
+  -webkit-border-image: url('../img/postcard-border.png') 10% round;
+  -o-border-image: url('../img/postcard-border.png') 10% round;
+  border-image: url('../img/postcard-border.png') 10% round;
+  background: #fff;
+  margin:5px auto;
+  font-family: "proxima-nova",sans-serif;
+  padding:5px;
+  font-size: 17px;
+}
+
+.postcard-wrap {
+  height: 420px;
+  width: 600px;
+  border: 5px solid transparent;
+  -webkit-border-image: url('../img/postcard-border.png') 10% round;
+  -o-border-image: url('../img/postcard-border.png') 10% round;
+  border-image: url('../img/postcard-border.png') 10% round;
+  margin:auto;
+}
