@@ -12,9 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('connect', 'SpotifyController@connect');
 
 Route::get('code', 'SpotifyController@code');
+
+Route::get('search', 'SpotifyController@search');
+Route::post('search', 'SpotifyController@search');

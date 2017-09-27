@@ -50,4 +50,14 @@ class SpotifyController extends Controller
 
     }
 
+    public function search(Request $request)
+    {
+       $region = $request->region ?: "London";
+       $ch = curl_init("https://api.cognitive.microsoft.com/bing/v5.0/images/search?count=5&q=beautiful+scenery+" . $region);
+       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+       curl_setopt($ch, CURLOPT_HTTPHEADER, ['Ocp-Apim-Subscription-Key: 06b1a291f77a4a2298fd642a091ae067']);
+       $resp = curl_exec($ch);
+       curl_close($ch);
+       return $resp;	
+    }
 }
