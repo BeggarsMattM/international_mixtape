@@ -45,7 +45,7 @@ class SpotifyController extends Controller
 
       $playlists = $this->api->getUserPlaylists($user_id, []);
 
-      return view('mixtape')->with('access_token', $accessToken)
+      return view('chooseplaylist')->with('access_token', $accessToken)
 	->with('playlists', $playlists);
 
     }
@@ -60,4 +60,22 @@ class SpotifyController extends Controller
        curl_close($ch);
        return $resp;	
     }
-}
+
+    public function postcard(Request $request) 
+    {
+	$refreshToken = session('refreshToken');
+
+	$this->session->refreshAccessToken($refreshToken);
+
+	$accessToken = $this->session->getAccessToken();
+
+	// Set our new access token on the API wrapper
+	$this->api->setAccessToken($accessToken);
+
+	$user_id = $this->api->me()->id;
+
+	$tracks = $this->api->getUserPlaylistTracks($user_id, $request->playlist_uri);
+
+	return view('postcard')->with('tracks', $tracks->items);
+    }
+}	  

@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Route::get('connect', 'SpotifyController@connect');
 
-Route::get('code', 'SpotifyController@code');
+Route::get('chooseplaylist', 'SpotifyController@code');
 
 Route::get('search', 'SpotifyController@search');
 Route::post('search', 'SpotifyController@search');
+
+Route::post('tracklist', 'SpotifyController@tracklist');
+
+Route::post('postcard', 'SpotifyController@postcard');

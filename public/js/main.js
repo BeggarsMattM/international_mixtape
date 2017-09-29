@@ -3,7 +3,8 @@ $(document).ready(function() {
     cellAlign: 'left',
     contain: true,
     pageDots: false,
-    prevNextButtons: false
+    prevNextButtons: false,
+    draggable: false
   });
   $('.next-btn').click(function() {
     $('.section-wrap').flickity('next');

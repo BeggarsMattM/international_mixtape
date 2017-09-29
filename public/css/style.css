@@ -4,6 +4,11 @@ html {
   font-weight: 400;
 }
 
+button,
+select {
+  outline:0px;
+}
+
 .section {
   width: 100%;
   height: 100vh;
@@ -30,6 +35,11 @@ html {
   border-radius: 20px;
   cursor: pointer;
   margin:30px auto 80px;
+}
+
+.center-wrap .next-btn a {
+  color:#fff;
+  text-decoration: none;
 }
 
 .title-text {
@@ -220,11 +230,74 @@ html {
 }
 
 .postcard-wrap {
-  height: 420px;
-  width: 600px;
+  height: 422px;
+  width: 640px;
   border: 5px solid transparent;
   -webkit-border-image: url('../img/postcard-border.png') 10% round;
   -o-border-image: url('../img/postcard-border.png') 10% round;
   border-image: url('../img/postcard-border.png') 10% round;
   margin:auto;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: #000;
+  color: #fff;
+  border: 0px;
+  padding: 11px 15px;
+  border-radius: 50%;
+  outline:0px;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left:-50px;
+}
+
+.slick-next {
+  right:-50px;
+}
+
+#results {
+  height: 442px;
+  width: 670px;
+  margin:auto;
+}
+
+.photo-slide-wrap {
+  height: 442px;
+  width: 650px;
+  border: 5px solid transparent;
+  -webkit-border-image: url('../img/postcard-border.png') 10% round;
+  -o-border-image: url('../img/postcard-border.png') 10% round;
+  border-image: url('../img/postcard-border.png') 10% round;
+}
+
+.photo-slide {
+  height: 422px;
+  width: 640px;
+  background-size: cover;
+  overflow: hidden;
+  outline:0px;
+  border:10px solid #fff;
+}
+
+.photo-slide img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#tracklist {
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: left;
+}
+
+#tracklist ol {
+  margin:15px auto;
 }
