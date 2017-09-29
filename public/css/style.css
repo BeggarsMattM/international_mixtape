@@ -34,7 +34,7 @@ select {
   font-size: 15px;
   border-radius: 20px;
   cursor: pointer;
-  margin:30px auto 80px;
+  margin:30px auto 30px;
 }
 
 .center-wrap .next-btn a {
@@ -147,7 +147,6 @@ select {
   vertical-align: middle;
   height: 300px;
   overflow-y: scroll;
-  padding:5px 10px;
 }
 
 .playlist-box p {
@@ -159,12 +158,18 @@ select {
   padding:0px;
   list-style: none;
   margin:0px;
+  border-bottom:2px solid #000;
 }
 
 .playlist-list li {
   padding: 8px 20px;
   border-top:2px solid #000;
   text-align: left;
+  cursor: pointer;
+}
+
+.playlist-list li:hover {
+  background: #ddd;
 }
 
 .or-text {
@@ -237,6 +242,27 @@ select {
   -o-border-image: url('../img/postcard-border.png') 10% round;
   border-image: url('../img/postcard-border.png') 10% round;
   margin:auto;
+  overflow:hidden;
+  position: relative;
+}
+
+.postcard-left {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.postcard-right {
+  position: absolute;
+  width: 50%;
+  height: calc(100% - 30px);
+  left: 50%;
+  margin: 15px auto;
+  border-left: 5px solid transparent;
+  -webkit-border-image: url(../img/postcard-border.png) 10% round;
+  -o-border-image: url(../img/postcard-border.png) 10% round;
+  border-image: url(../img/postcard-border.png) 10% round;
 }
 
 .slick-arrow {
@@ -263,13 +289,14 @@ select {
 
 #results {
   height: 442px;
-  width: 670px;
+  width: 690px;
   margin:auto;
 }
 
 .photo-slide-wrap {
   height: 442px;
   width: 650px;
+  margin:0px 10px;
   border: 5px solid transparent;
   -webkit-border-image: url('../img/postcard-border.png') 10% round;
   -o-border-image: url('../img/postcard-border.png') 10% round;
@@ -294,10 +321,15 @@ select {
   font-family: "verveine",sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: 25px;
   text-align: left;
 }
 
 #tracklist ol {
-  margin:15px auto;
+  margin: 15px auto;
+  padding: 0px 10px 0px 40px;
+}
+
+#tracklist li {
+  margin:5px auto;
 }

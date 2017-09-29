@@ -21,7 +21,7 @@ class SpotifyController extends Controller
 
     public function connect()
     {
-      $scopes = [];
+      $scopes = ['user-read-email'];
 
       $authorizeUrl = $this->session->getAuthorizeUrl(
         ['scope' => $scopes, 'show_dialog' => true]
@@ -40,6 +40,8 @@ class SpotifyController extends Controller
       $this->api->setAccessToken($accessToken);
 
       session(['refreshToken' => $this->session->getRefreshToken()]);
+
+      //dd($this->api->me());
 
       $user_id = $this->api->me()->id;
 

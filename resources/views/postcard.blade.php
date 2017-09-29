@@ -31,7 +31,7 @@
                   <div id="tracklist">
             	    <ol>
             	    @foreach ($tracks as $track)
-            	      <li>{{ $track->track->name }}</li>
+            	      <li>{{ $track->track->name }} - {{ collect($track->track->artists)->pluck('name')->implode(', ') }}</li>
             	    @endforeach
             	    </ol>
             	    </div>
