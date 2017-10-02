@@ -9,4 +9,15 @@ $(document).ready(function() {
   $('.next-btn').click(function() {
     $('.section-wrap').flickity('next');
   });
+  var song = document.getElementById("continental-breakfast");
+  $('.audio-pause').click(function() {
+    song.pause();
+    $(this).hide();
+    $('.audio-play').show();
+  });
+  $('.audio-play').click(function() {
+    song.play();
+    $(this).hide();
+    $('.audio-pause').show();
+  });
 });

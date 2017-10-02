@@ -78,6 +78,8 @@ class SpotifyController extends Controller
 
 	$tracks = $this->api->getUserPlaylistTracks($user_id, $request->playlist_uri);
 
-	return view('postcard')->with('tracks', $tracks->items);
+	$link = "https://open.spotify.com/user/{$user_id}/playlist/{$request->playlist_uri}";
+
+	return view('postcard')->with('tracks', $tracks->items)->with('link', $link);
     }
 }	  

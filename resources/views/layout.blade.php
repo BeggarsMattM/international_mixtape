@@ -27,7 +27,19 @@
           <a href="#">Stream Courtney and Kurt</a>
         </div>
         <div class="bottom-left corner">
-          <div class="player"></div>
+          <div class="player">
+            <audio id="continental-breakfast" loop autoplay>
+              <source src="https://s3-eu-west-1.amazonaws.com/cdn.beggars.com/matador/courtney-and-kurt/05+Continental+Breakfast.mp3" type="audio/mpeg"/>
+            </audio>
+            <div class="audio-controls">
+              <img class="audio-play" src="img/play-icon.png" />
+              <img class="audio-pause" src="img/pause-icon.png" />
+            </div>
+            <div class="audio-details">
+              <p>Continental Breakfast</p>
+              <p>Lotta Sea Lice</p>
+            </div>
+          </div>
         </div>
         <div class="bottom-right corner">
           <a href="#">Terms & Conditions</a>
@@ -52,7 +64,9 @@
 	  get_tracklist($(this).attr('id'));
         });
 	$("#ABC").change(function () {
+	  var country = $('.crs-country option:selected').val();
   	  var region = $("#ABC option:selected").val();
+	  $('.postcard-right').append('<p class="location-card">' + region + ", " + country + '</p>');
   	  $.post({
     	    url: "/search",
     	    data: { region: encodeURIComponent(region), _token: '{{ csrf_token() }}' },

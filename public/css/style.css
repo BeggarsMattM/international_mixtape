@@ -5,8 +5,18 @@ html {
 }
 
 button,
-select {
+select,
+input {
   outline:0px;
+}
+
+input:active {
+  outline: 0px;
+}
+
+.section1 {
+  background: url(../img/earthbg2.jpg) no-repeat center center;
+  background-size: cover;
 }
 
 .section {
@@ -55,13 +65,14 @@ select {
   font-style: normal;
   font-weight: 400;
   font-size: 27px;
+  letter-spacing: .5px;
   width: 100%;
   max-width: 700px;
-  margin:5px auto;
+  margin: 5px auto;
 }
 
 .fixed .corner {
-  padding:20px;
+  padding: 40px 50px;
   position: absolute;
 }
 
@@ -72,7 +83,7 @@ select {
 }
 
 .fixed .top-left img {
-  width: 150px;
+  width: 135px;
 }
 
 .fixed .top-right {
@@ -108,6 +119,30 @@ select {
   bottom:0px;
   left:0px;
   z-index: 2;
+}
+
+.audio-play {
+  display: none;
+}
+
+.audio-controls {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.audio-details {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.audio-details p {
+  margin:0px auto;
+  font-size: 13px;
+}
+
+.audio-details p:first-child {
+  font-weight: bold;
 }
 
 .section-header {
@@ -303,18 +338,38 @@ select {
   border-image: url('../img/postcard-border.png') 10% round;
 }
 
+.slick-slide:focus {
+  outline:0px;
+}
+
 .photo-slide {
-  height: 422px;
-  width: 640px;
+  height: 442px;
+  width: 660px;
   background-size: cover;
   overflow: hidden;
-  outline:0px;
-  border:10px solid #fff;
+  outline: 0px;
+  border: 0px solid #fff;
 }
 
 .photo-slide img {
   min-width: 100%;
   min-height: 100%;
+}
+
+.playlist-title {
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.playlist-title a {
+  color:#000;
+  text-decoration: none;
+}
+
+.playlist-title a:hover {
+  color:#888;
 }
 
 #tracklist {
@@ -332,4 +387,76 @@ select {
 
 #tracklist li {
   margin:5px auto;
+}
+
+#tracklist a {
+  text-decoration: none;
+  color:#000;
+}
+
+#tracklist a:hover {
+  color:#888;
+}
+
+#stamp {
+  font-family: Arial, sans-serif;
+  line-height: 22px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  position: absolute;
+  right: 20px;
+  top: 0px;
+  width: 70px;
+  height: 70px;
+  padding: 15px 5px;
+  color: #444;
+  border: 3px dashed #444;
+}
+
+.location-card {
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  text-align: left;
+  margin: 10px 15px;
+  width: 188px;
+}
+
+.notes {
+  background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-image: -o-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-image: linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-size: 100% 100%, 100% 100%, 100% 31px;
+  border: none;
+  line-height: 31px;
+  font-family: "verveine",sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  padding: 8px;
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  width: calc(100% - 15px);
+  height: 160px;
+}
+
+.notes::-webkit-input-placeholder {
+  color:#000;
+}
+.notes::-moz-placeholder { /* Firefox 19+ */
+  color:#000;
+}
+.notes:-ms-input-placeholder { /* IE 10+ */
+  color:#000;
+}
+.notes:-moz-placeholder { /* Firefox 18- */
+  color:#000;
+}
+
+.notes:focus {
+    outline: none;
 }
