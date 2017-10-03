@@ -25,3 +25,5 @@ Route::post('search', 'SpotifyController@search');
 Route::post('tracklist', 'SpotifyController@tracklist');
 
 Route::post('postcard', 'SpotifyController@postcard');
+
+Route::post('send', 'SpotifyController@send');

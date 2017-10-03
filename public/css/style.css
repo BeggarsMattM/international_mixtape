@@ -4,6 +4,13 @@ html {
   font-weight: 400;
 }
 
+::selection {
+  background: #ffe300;
+}
+::-moz-selection {
+  background: #ffe300;
+}
+
 button,
 select,
 input {
@@ -15,8 +22,8 @@ input:active {
 }
 
 .section1 {
-  background: url(../img/earthbg2.jpg) no-repeat center center;
-  background-size: cover;
+  background: url(../img/chillin-bg.jpg) no-repeat center bottom;
+  background-size: auto 100%;
 }
 
 .section {
@@ -41,7 +48,7 @@ input:active {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 20px;
   cursor: pointer;
   margin:30px auto 30px;
@@ -50,6 +57,10 @@ input:active {
 .center-wrap .next-btn a {
   color:#fff;
   text-decoration: none;
+}
+
+.home-logo {
+  margin:0px auto;
 }
 
 .title-text {
@@ -61,11 +72,12 @@ input:active {
 }
 
 .description {
-  font-family: "verveine",sans-serif;
+  font-family: 'Pangolin', cursive;
+  text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
-  font-size: 27px;
-  letter-spacing: .5px;
+  font-size: 19px;
+  letter-spacing: 1px;
   width: 100%;
   max-width: 700px;
   margin: 5px auto;
@@ -100,7 +112,7 @@ input:active {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 20px;
 }
 
@@ -121,7 +133,7 @@ input:active {
   z-index: 2;
 }
 
-.audio-play {
+.audio-pause {
   display: none;
 }
 
@@ -176,38 +188,44 @@ input:active {
 }
 
 .playlist-box {
-  border:2px solid #000;
-  border-radius: 5px;
+  border: 2px dashed #000;
+  border-radius: 10px;
   display: inline-block;
   vertical-align: middle;
   height: 300px;
   overflow-y: scroll;
+  font-family: 'Pangolin', cursive;
 }
 
 .playlist-box p {
   margin:0px;
   padding:20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: .5px;
 }
 
 .playlist-list {
   padding:0px;
   list-style: none;
   margin:0px;
-  border-bottom:2px solid #000;
+  border-bottom:2px dashed #000;
 }
 
 .playlist-list li {
   padding: 8px 20px;
-  border-top:2px solid #000;
+  border-top:2px dashed #000;
   text-align: left;
   cursor: pointer;
 }
 
 .playlist-list li:hover {
-  background: #ddd;
+  background: #ffe300;
 }
 
 .or-text {
+  font-family: 'Pangolin', cursive;
+  letter-spacing: 1.5px;
   display: inline-block;
   margin:0px;
   padding:20px;
@@ -267,6 +285,8 @@ input:active {
   font-family: "proxima-nova",sans-serif;
   padding:5px;
   font-size: 17px;
+  font-size: 17px;
+  font-family: 'Pangolin', cursive;
 }
 
 .postcard-wrap {
@@ -308,10 +328,11 @@ input:active {
   background: #000;
   color: #fff;
   border: 0px;
-  padding: 11px 15px;
+  padding: 12px 13px;
   border-radius: 50%;
-  outline:0px;
+  outline: 0px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .slick-prev {
@@ -357,26 +378,30 @@ input:active {
 }
 
 .playlist-title {
-  font-family: "verveine",sans-serif;
+  font-family: 'Pangolin', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 20px;
+  padding: 0px 40px;
+  margin: 25px auto 15px;
+  text-align: left;
 }
 
 .playlist-title a {
   color:#000;
   text-decoration: none;
+  display: inline-block;
 }
 
 .playlist-title a:hover {
-  color:#888;
+  background: #ffe300;
 }
 
 #tracklist {
-  font-family: "verveine",sans-serif;
+  font-family: 'Pangolin', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 17px;
   text-align: left;
 }
 
@@ -386,16 +411,18 @@ input:active {
 }
 
 #tracklist li {
-  margin:5px auto;
+  margin:0px auto;
 }
 
 #tracklist a {
   text-decoration: none;
   color:#000;
+  margin:5px auto;
+  display: inline-block;
 }
 
 #tracklist a:hover {
-  color:#888;
+  background: #ffe300;
 }
 
 #stamp {
@@ -410,32 +437,34 @@ input:active {
   height: 70px;
   padding: 15px 5px;
   color: #444;
-  border: 3px dashed #444;
+  border: 2px dashed #444;
+  font-family: 'Pangolin', cursive;
+  border-radius: 4px;
 }
 
 .location-card {
-  font-family: "verveine",sans-serif;
+  font-family: 'Pangolin', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 20px;
   text-align: left;
   margin: 10px 15px;
   width: 188px;
 }
 
 .notes {
-  background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
-  background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
-  background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
-  background-image: -o-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
-  background-image: linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, #000 29px, #000 35px, white 31px);
+  background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, rgba(0 0 0 0.5) 29px, rgba(0 0 0 0.5) 35px, white 31px);
+  background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, rgba(0 0 0 0.5) 29px, rgba(0 0 0 0.5) 35px, white 31px);
+  background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, rgba(0 0 0 0.5) 29px, rgba(0 0 0 0.5) 35px, white 31px);
+  background-image: -o-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, rgba(0 0 0 0.5) 29px, rgba(0 0 0 0.5) 35px, white 31px);
+  background-image: linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 28px, rgba(0 0 0 0.5) 29px, rgba(0 0 0 0.5) 35px, white 31px);
   background-size: 100% 100%, 100% 100%, 100% 31px;
   border: none;
   line-height: 31px;
-  font-family: "verveine",sans-serif;
+  font-family: 'Pangolin', cursive;
   font-style: normal;
   font-weight: 400;
-  font-size: 25px;
+  font-size: 20px;
   padding: 8px;
   position: absolute;
   bottom: 10px;

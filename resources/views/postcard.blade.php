@@ -29,11 +29,11 @@
               <div class="postcard-wrap">
                 <div class="postcard-left">
                 <p class="playlist-title">
-                  <a href="{{ $link }}" target="blank">Playlist Name</a>
+                  <a href="{{ $link }}" target="blank" id="name" email="{{ $email }}">{{ $playlist->name }}</a>
                 </p>
 		<div id="tracklist">
             	    <ol>
-            	    @foreach ($tracks as $track)
+            	    @foreach ($playlist->tracks->items as $track)
 		    <a href="{{ $track->track->external_urls->spotify }}" target="blank">
             	      <li>{{ $track->track->name }} - {{ collect($track->track->artists)->pluck('name')->implode(', ') }}</li>
 		    </a>
@@ -59,7 +59,7 @@
               <div class="center-content">
                 <div id="results"></div>
               </div>
-              <div class="next-btn">SEND YOUR CARD</div>
+              <div class="next-btn" id="send">SEND YOUR CARD <i class="fa fa-paper-plane" aria-hidden="true"></i></div>
             </div>
           </div>
         </div>

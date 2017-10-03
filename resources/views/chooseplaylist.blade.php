@@ -35,7 +35,7 @@
                 <form action="/postcard" method="POST">
                   {{ csrf_field() }}
                   <input id="playlist_uri" type="text" class="uri-input" name="playlist_uri" /><br />
-                  <input type="submit" value="SUBMIT" class="uri-submit" />
+                  <input type="submit" value="SUBMIT" class="uri-submit next-btn" />
                 </form>
               </div>
             </div>

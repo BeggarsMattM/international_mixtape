@@ -14,7 +14,9 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
         <script src="https://use.typekit.net/dga7jfu.js"></script>
+        <script src="https://use.fontawesome.com/f254e2fc06.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
@@ -28,7 +30,7 @@
         </div>
         <div class="bottom-left corner">
           <div class="player">
-            <audio id="continental-breakfast" loop autoplay>
+            <audio id="continental-breakfast" loop>
               <source src="https://s3-eu-west-1.amazonaws.com/cdn.beggars.com/matador/courtney-and-kurt/05+Continental+Breakfast.mp3" type="audio/mpeg"/>
             </audio>
             <div class="audio-controls">
@@ -93,6 +95,23 @@
 	    $('#tracklist').append(data);
 	  });
 	}
+	$('#send').on('click', function () {
+	  $.post({
+	    url: '/send',
+            data: {
+		country: $('.crs-country option:selected').val(),
+		region: $('#ABC option:selected').val(),
+		playlist_link: $('#name').attr('href'),
+		image: $('.slick-active .photo-slide').css('background-image'),
+		email: $('#name').attr('email'),
+		message: $('.notes').val(),
+		_token: '{{ csrf_token() }}'
+	    },
+	    dataType: 'json'
+	  }).done(function (data) {
+
+	  });
+	});
 	</script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

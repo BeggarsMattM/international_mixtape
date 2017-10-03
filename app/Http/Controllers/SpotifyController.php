@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use SpotifyWebAPI;
+use App\Postcard;
 
 class SpotifyController extends Controller
 {
@@ -74,12 +75,29 @@ class SpotifyController extends Controller
 	// Set our new access token on the API wrapper
 	$this->api->setAccessToken($accessToken);
 
-	$user_id = $this->api->me()->id;
+	$user = $this->api->me();
 
-	$tracks = $this->api->getUserPlaylistTracks($user_id, $request->playlist_uri);
+	$playlist = $this->api->getUserPlaylist($user->id, $request->playlist_uri);
 
-	$link = "https://open.spotify.com/user/{$user_id}/playlist/{$request->playlist_uri}";
+	//$tracks = $this->api->getUserPlaylistTracks($user->id, $request->playlist_uri);
+	
+	$link = "https://open.spotify.com/user/{$user->id}/playlist/{$request->playlist_uri}";
+	$email = $user->email;
 
-	return view('postcard')->with('tracks', $tracks->items)->with('link', $link);
+	return view('postcard')->with('link', $link)->with('email', $email)
+		->with('playlist', $playlist);
+    }
+
+    public function send(Request $request)
+    {
+	$postcard = new Postcard;
+	$postcard->country = $request->country;
+	$postcard->region = $request->region;
+	$postcard->playlist_link = $request->playlist_link;
+	$postcard->image = $request->image;
+	$postcard->email = $request->email;
+	$postcard->message = $request->message;
+	$postcard->save();
+	return $request;
     }
 }	  
