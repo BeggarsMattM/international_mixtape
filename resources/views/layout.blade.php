@@ -105,11 +105,17 @@
 		image: $('.slick-active .photo-slide').css('background-image'),
 		email: $('#name').attr('email'),
 		message: $('.notes').val(),
+	        playlist_name: $("#name").text(),
+	        tracklist: $("#tracklist").html(),
 		_token: '{{ csrf_token() }}'
 	    },
 	    dataType: 'json'
 	  }).done(function (data) {
-
+            $('#mail').css('background-image', data.image);
+	    $('.response-left').append('<a href="' + data.playlist_link + '">' + data.playlist_name + '</a>')
+		.append('<p>' + data.tracklist + '</p>');
+            $('.response-right').append('<p>' + (data.message || 'This postcard intentionally left blank')+ '</p>')
+		.append('<p>Postcard received from ' + data.region + ' in ' + data.country + '</p>');
 	  });
 	});
 	</script>

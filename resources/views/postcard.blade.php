@@ -43,7 +43,7 @@
                 </div>
                 <div class="postcard-right">
                   <div id="stamp">YOUR STAMP HERE</div>
-                  <textarea class="notes" placeholder="Message:"></textarea>
+                  <textarea class="notes">Message:</textarea>
                 </div>
               </div>
             </div>
@@ -70,19 +70,19 @@
             <h2 class="section-title">You've Got Mail</h2>
           </div>
           <div class="center-content">
-            <div class="postcard-wrap">
+            <div class="postcard-wrap" id="mail">
               <div class="front">
-                <div class="postcard-left">
+                <div class="response-left">
                   <div id="tracklist"></div>
                 </div>
-                <div class="postcard-right"></div>
+                <div class="response-right"></div>
               </div>
               <div class="back">
                 <!-- insert image here -->
               </div>
             </div>
           </div>
-          <div class="next-btn">CONTINUE</div>
+          <div class="next-btn">View Your Card</div>
           </div>
         </div>
 

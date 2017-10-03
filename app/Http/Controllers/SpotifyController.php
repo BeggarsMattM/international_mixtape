@@ -97,7 +97,13 @@ class SpotifyController extends Controller
 	$postcard->image = $request->image;
 	$postcard->email = $request->email;
 	$postcard->message = $request->message;
+	$postcard->playlist_name = $request->playlist_name;
+	$postcard->tracklist = $request->tracklist;
 	$postcard->save();
-	return $request;
+
+	$response = Postcard::where('region', '<>', $request->country)->get() ?: Postcard::where('country', '<>', $request->country)->get();
+	$response = $response->random();
+
+	return $response;
     }
 }	  
