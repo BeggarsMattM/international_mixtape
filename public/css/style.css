@@ -21,26 +21,90 @@ input:active {
   outline: 0px;
 }
 
-.section1 {
-  background: url(../img/chillin-bg.jpg) no-repeat center bottom;
-  background-size: auto 100%;
-}
-
 .section {
   width: 100%;
   height: 100vh;
   display: table;
+  background: #fff;
+}
+
+.section.section1 {
+  background: url(../img/chillin-bg.jpg) no-repeat center bottom;
+  background-size: auto 100%;
+}
+
+.label-logos {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  left: 0px;
+  opacity: .3;
+}
+
+.label-logos ul {
+  padding:0px;
+  margin:0px auto;
+  list-style: none;
+}
+
+.label-logos li {
+  display: inline-block;
+  margin:0px 7px;
+}
+
+.label-logos li img {
+  width: 40px;
 }
 
 .center-wrap {
   text-align: center;
   margin: auto;
-  width: 90%;
+  width: 100%;
   display: table-cell;
   vertical-align: middle;
 }
 
 .center-wrap .next-btn {
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 30px auto 30px;
+  min-width: 200px;
+  padding:10px;
+}
+
+.center-wrap .next-btn1 {
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 30px auto 30px;
+  min-width: 200px;
+  padding:10px;  
+}
+
+
+.center-wrap .next-btn a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  display: inline;
+}
+
+#send {
   padding:8px 20px;
   display: inline-block;
   color:#fff;
@@ -52,9 +116,10 @@ input:active {
   border-radius: 20px;
   cursor: pointer;
   margin:30px auto 30px;
+  min-width:200px;
 }
 
-.center-wrap .next-btn a {
+#send a {
   color:#fff;
   text-decoration: none;
 }
@@ -105,14 +170,14 @@ input:active {
 }
 
 .fixed .top-right a {
-  padding:8px 20px;
+  padding: 10px 25px;
   display: inline-block;
-  color:#fff;
+  color: #fff;
   background: #000;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 20px;
 }
 
@@ -194,6 +259,7 @@ input:active {
   vertical-align: middle;
   height: 300px;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   font-family: 'Pangolin', cursive;
 }
 
@@ -243,7 +309,7 @@ input:active {
   font-family: "proxima-nova",sans-serif;
   font-style: normal;
   font-weight: 400;
-  padding:6px 20px;
+  padding:10px 20px;
   display: inline-block;
   color:#fff;
   background: #000;
@@ -276,7 +342,8 @@ input:active {
 .country-select-form select {
   width: 100%;
   max-width: 340px;
-  border: 5px solid transparent;
+  border: 5px solid #000;
+  -webkit-appearance:none;
   -webkit-border-image: url('../img/postcard-border.png') 10% round;
   -o-border-image: url('../img/postcard-border.png') 10% round;
   border-image: url('../img/postcard-border.png') 10% round;
@@ -287,12 +354,13 @@ input:active {
   font-size: 17px;
   font-size: 17px;
   font-family: 'Pangolin', cursive;
+  height:40px;
 }
 
 .postcard-wrap {
   height: 422px;
   width: 640px;
-  border: 5px solid transparent;
+  border: 5px solid #000;
   -webkit-border-image: url('../img/postcard-border.png') 10% round;
   -o-border-image: url('../img/postcard-border.png') 10% round;
   border-image: url('../img/postcard-border.png') 10% round;
@@ -306,6 +374,7 @@ input:active {
   width: 50%;
   height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .postcard-right {
@@ -314,10 +383,24 @@ input:active {
   height: calc(100% - 30px);
   left: 50%;
   margin: 15px auto;
-  border-left: 5px solid transparent;
+  border:0px;
+  border-left: 5px solid #000;
   -webkit-border-image: url(../img/postcard-border.png) 10% round;
   -o-border-image: url(../img/postcard-border.png) 10% round;
   border-image: url(../img/postcard-border.png) 10% round;
+}
+
+.slick-list {
+  transform: translateY(0%);
+  -webkit-transition: all 800ms cubic-bezier(0.880, 0, 0.620, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.880, -0.185, 0.620, 1.090);
+     -moz-transition: all 800ms cubic-bezier(0.880, -0.185, 0.620, 1.090);
+       -o-transition: all 800ms cubic-bezier(0.880, -0.185, 0.620, 1.090);
+          transition: all 800ms cubic-bezier(0.880, -0.185, 0.620, 1.090); /* custom */
+}
+
+.slick-list.send-up {
+  transform: translateY(-200%);
 }
 
 .slick-arrow {
@@ -333,6 +416,21 @@ input:active {
   outline: 0px;
   cursor: pointer;
   font-size: 14px;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.slick-arrow.hide-arrows {
+  opacity: 0;
+}
+
+.image-choose-header {
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+.image-choose-header.hide-header {
+  opacity: 0;
 }
 
 .slick-prev {
@@ -353,7 +451,7 @@ input:active {
   height: 442px;
   width: 650px;
   margin:0px 10px;
-  border: 5px solid transparent;
+  border: 5px solid #000;
   -webkit-border-image: url('../img/postcard-border.png') 10% round;
   -o-border-image: url('../img/postcard-border.png') 10% round;
   border-image: url('../img/postcard-border.png') 10% round;
@@ -488,4 +586,214 @@ input:active {
 
 .notes:focus {
     outline: none;
+}
+
+#mail img {
+  width: 100%;
+  height: 100%;
+}
+
+.flip-icon {
+  padding: 8px 20px;
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+.section6 .center-wrap {
+  background: url(../img/earthbg2.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.section6.showcard .center-wrap {
+    opacity: 1;
+}
+
+.loading-animation {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loading-animation .ani-text {
+  font-family: 'Pangolin', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.loading-animation img {
+  width: 250px;
+}
+
+.section6 .center-wrap {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease;
+}
+
+.section6.showcard .center-wrap {
+  opacity: 1;
+  visibility: visible;
+}
+
+.section6.showcard .loading-animation {
+  display: none;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+  transform: translate(0,200%);
+  z-index: 20;
+  -webkit-transition: all 800ms cubic-bezier(0.645, 0.000, 0.380, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.645, 0.000, 0.380, 1.235);
+     -moz-transition: all 800ms cubic-bezier(0.645, 0.000, 0.380, 1.235);
+       -o-transition: all 800ms cubic-bezier(0.645, 0.000, 0.380, 1.235);
+          transition: all 800ms cubic-bezier(0.645, 0.000, 0.380, 1.235); /* custom */
+}
+
+.section6.showcard .flip-container {
+  transform: translate(0,0);
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+  height: 422px;
+  width: 640px;
+  margin:auto;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.76s ease;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.flipper-wrap {
+  height: 422px;
+  width: 640px;
+  border: 5px solid #000;
+  -webkit-border-image: url('../img/postcard-border.png') 10% round;
+  -o-border-image: url('../img/postcard-border.png') 10% round;
+  border-image: url('../img/postcard-border.png') 10% round;
+  margin:auto;
+  position: relative;
+}
+
+.response-left {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.response-left > a {
+  font-family: 'Pangolin', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 0px 40px;
+  margin: 25px auto 0px;
+  text-align: left;
+  color: #000;
+  text-decoration: none;
+  /* padding-top: 25px; */
+  display: inline-block;
+}
+
+.response-left ol {
+  font-family: 'Pangolin', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  text-align: left;
+  margin: 15px auto;
+  padding: 0px 10px 0px 40px;
+}
+
+.response-left li {
+  margin:0px auto;
+}
+
+.response-left ol a {
+  text-decoration: none;
+  color:#000;
+  margin:5px auto;
+  display: inline-block;
+}
+
+.response-left ol a:hover {
+  background: #ffe300;
+}
+
+
+.response-right {
+  position: absolute;
+  width: 50%;
+  height: calc(100% - 30px);
+  left: 50%;
+  margin: 15px auto;
+  border:0px;
+  border-left: 5px solid #000;
+  -webkit-border-image: url(../img/postcard-border.png) 10% round;
+  -o-border-image: url(../img/postcard-border.png) 10% round;
+  border-image: url(../img/postcard-border.png) 10% round;
+}
+
+.response-right p {
+  font-family: 'Pangolin', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: left;
+  margin: 10px 15px;
+  width: 188px;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: 0.6s;
+          transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+  width: 100%;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+  -webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(-180deg);
+	transform: rotateY(180deg);
+  background:#fff;
 }

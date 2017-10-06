@@ -15,7 +15,7 @@
               </form>
             </div>
 	    <div id="tracks"></div>
-            <div class="next-btn">CONTINUE</div>
+            <div class="next-btn1">CHOOSE A REGION</div>
           </div>
         </div>
 
@@ -53,46 +53,50 @@
 
         <div class="section section5">
           <div class="center-wrap">
-            <div class="section-header">
+            <div class="section-header image-choose-header">
               <p class="section-number">4.</p>
               <h2 class="section-title">Choose An Image</h2>
+            </div>
               <div class="center-content">
                 <div id="results"></div>
               </div>
-              <div class="next-btn" id="send">SEND YOUR CARD <i class="fa fa-paper-plane" aria-hidden="true"></i></div>
-            </div>
+              <div id="send">SEND YOUR CARD <i class="fa fa-paper-plane" aria-hidden="true"></i></div>
           </div>
         </div>
 
         <div class="section section6">
+
+          <div class="loading-animation">
+            <img src="img/earthani-large3.gif" />
+            <p class="ani-text">Fetching Your Card...</p>
+          </div>
+
           <div class="center-wrap">
+
           <div class="section-header">
             <h2 class="section-title">You've Got Mail</h2>
           </div>
+
           <div class="center-content">
-            <div class="postcard-wrap" id="mail">
-              <div class="front">
-                <div class="response-left">
-                  <div id="tracklist"></div>
+            <div class="flip-container">
+              <div class="flipper-wrap flipper" ontouchstart="this.classList.toggle('hover');">
+                <div class="front" id="mail" style="background-size:cover;">
+                  <img src="img/postcard-overlay.png" />
                 </div>
-                <div class="response-right"></div>
-              </div>
-              <div class="back">
-                <!-- insert image here -->
+                <div class="back">
+                  <div class="response-left">
+                    <div id="tracklist"></div>
+                  </div>
+                  <div class="response-right">
+                    <div id="stamp">YOUR STAMP HERE</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="next-btn">View Your Card</div>
+          <div class="flip-icon">FLIP <i class="fa fa-refresh" aria-hidden="true"></i></div><br />
+          <div class="next-btn">Share your Card <i class="fa fa-external-link" aria-hidden="true"></i></div>
           </div>
         </div>
 
-        <div class="section section7">
-          <div class="center-wrap">
-            <div class="section-header">
-              <h2 class="section-title">Your Mixtape</h2>
-           </div>
-          </div>
-        </div>
-
-        <div class="section section8"></div>
 @endsection

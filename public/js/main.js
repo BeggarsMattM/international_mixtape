@@ -9,15 +9,23 @@ $(document).ready(function() {
   $('.next-btn').click(function() {
     $('.section-wrap').flickity('next');
   });
-  var song = document.getElementById("continental-breakfast");
-  $('.audio-pause').click(function() {
-    song.pause();
-    $(this).hide();
-    $('.audio-play').show();
+  $('.next-btn1').click(function() {
+    if (!$('#ABC').val()) return false;
+    var slick = function() { $('#results').slick(); };
+    $.when(slick()).done(function() { $('.section-wrap').flickity('next'); });
   });
-  $('.audio-play').click(function() {
-    song.play();
-    $(this).hide();
-    $('.audio-pause').show();
+  $('.flip-icon').click(function() {
+    $('.flip-container').toggleClass('hover');
+  });
+  $('#send').click(function(e) {
+    $('.slick-list').addClass('send-up');
+    $('.slick-arrow').addClass('hide-arrows');
+    $('.image-choose-header').addClass('hide-header');
+    setTimeout(function(){
+      $('.section-wrap').flickity('next');
+    }, 680);
+    setTimeout(function(){
+      $(".section6").addClass("showcard");
+    }, 4000);
   });
 });

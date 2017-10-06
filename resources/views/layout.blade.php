@@ -3,11 +3,11 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Courtney Barnett and Kurt Vile - Intercontinental Mixtape</title>
-        <meta name="description" content="">
+        <meta name="description" content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new collaborative album by Courtney Barnett and Kurt Vile.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css" />
@@ -30,7 +30,7 @@
         </div>
         <div class="bottom-left corner">
           <div class="player">
-            <audio id="continental-breakfast" loop>
+            <!--audio id="continental-breakfast" loop>
               <source src="https://s3-eu-west-1.amazonaws.com/cdn.beggars.com/matador/courtney-and-kurt/05+Continental+Breakfast.mp3" type="audio/mpeg"/>
             </audio>
             <div class="audio-controls">
@@ -40,7 +40,8 @@
             <div class="audio-details">
               <p>Continental Breakfast</p>
               <p>Lotta Sea Lice</p>
-            </div>
+            </div-->
+<iframe src="https://open.spotify.com/embed?uri=spotify:album:2p307RlVPc4fFl34IljlDh&theme=white" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
           </div>
         </div>
         <div class="bottom-right corner">
@@ -68,17 +69,17 @@
 	$("#ABC").change(function () {
 	  var country = $('.crs-country option:selected').val();
   	  var region = $("#ABC option:selected").val();
-	  $('.postcard-right').append('<p class="location-card">' + region + ", " + country + '</p>');
+	  $('.next-btn1').text("CONTINUE");
+          $('#results').empty();
+	  $('.postcard-right').empty().append('<p class="location-card">' + region + ", " + country + '</p>');
   	  $.post({
     	    url: "/search",
-    	    data: { region: encodeURIComponent(region), _token: '{{ csrf_token() }}' },
+    	    data: { country: encodeURIComponent(country), region: encodeURIComponent(region), _token: '{{ csrf_token() }}' },
     	    dataType: "json"
   	  }).done(function (data) {
-    	    $('#results').empty();
     	    for (i = 0; i < data.value.length; i++) {
      	      $('#results').append('<div class="photo-slide-wrap"><div class="photo-slide" style="background:url(' + data.value[i].contentUrl + ') no-repeat center center; background-size:cover;"><img src="img/postcard-overlay.png"></div></div>');
     	    }
-          $('#results').slick();
   	  });
 
 	});
