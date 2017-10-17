@@ -1,18 +1,26 @@
 $(document).ready(function() {
   $('.section-wrap').flickity({
     cellAlign: 'left',
-    contain: true,
     pageDots: false,
     prevNextButtons: false,
-    draggable: false
+    draggable: false,
+    imagesLoaded: true
   });
+  $('.flickity-enabled').resize();
   $('.next-btn').click(function() {
     $('.section-wrap').flickity('next');
   });
+  $('.next-btn-submit-playlist').click(function() {
+   if (!$('#playlist_uri').val()) return false;
+   $('.section-wrap').flickity('next');
+  });
   $('.next-btn1').click(function() {
     if (!$('#ABC').val()) return false;
-    var slick = function() { $('#results').slick(); };
-    $.when(slick()).done(function() { $('.section-wrap').flickity('next'); });
+    //var slick = function() { console.log('xyz'); console.log($('#results').html()); $('#results').slick(); };
+    //$.when(slick()).done(function() {
+    //  console.log('slicked');
+      $('.section-wrap').flickity('next');
+    //});
   });
   $('.flip-icon').click(function() {
     $('.flip-container').toggleClass('hover');
@@ -28,4 +36,16 @@ $(document).ready(function() {
       $(".section6").addClass("showcard");
     }, 4000);
   });
+  $('.where').click(function() {
+    $('.video-popup').addClass('active');
+    $('.video-popup').find('video').get(0).play();
+  });
+  $('.video-popup').click(function() {
+    $(this).removeClass('active');
+  });
+});
+
+$(window).on('load', function () {
+     $('.section-wrap').flickity('reposition');
+     $(window).resize();
 });

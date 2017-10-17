@@ -3,12 +3,14 @@
 @section('content')
         <div class="section section2">
           <div class="center-wrap">
+            <div class="center-inner">
             <div class="section-header">
               <p class="section-number">1.</p>
               <h2 class="section-title">Select a Playlist</h2>
             </div>
             <div class="center-content">
-              <div class="playlist-box">
+              @if (count($playlists->items) > 0)
+	      <div class="playlist-box">
                 <p>Choose From Your Public Playlists</p>
                 <ol class="playlist-list">
 		  @foreach ($playlists->items as $playlist)
@@ -28,18 +30,26 @@
                   <li>12. Playlist Name</li-->
                 </ol>
               </div>
+
               <p class="or-text">OR</p>
+
+	      @endif
               <div class="playlist-box">
-                <p>Enter the URI of a custom playlist</p>
-                <p>Where can I find this?</p>
+                <p>Enter the URI of a custom playlist<span class="where">Where can I find this?</span></p>
                 <form action="/postcard" method="POST">
                   {{ csrf_field() }}
                   <input id="playlist_uri" type="text" class="uri-input" name="playlist_uri" /><br />
-                  <input type="submit" value="SUBMIT" class="uri-submit next-btn" />
+                  <input type="submit" value="SUBMIT" class="uri-submit next-btn-submit-playlist"/>
                 </form>
               </div>
             </div>
+            </div>
             <!--div class="next-btn">CONTINUE</div-->
+          </div>
+          <div class="video-popup">
+            <video width="600" height="430" controls loop>
+              <source src="img/uri-find.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 @endsection

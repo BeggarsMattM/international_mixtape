@@ -22,7 +22,7 @@ class SpotifyController extends Controller
 
     public function connect()
     {
-      $scopes = ['user-read-email'];
+      $scopes = ['user-read-email', 'user-follow-modify'];
 
       $authorizeUrl = $this->session->getAuthorizeUrl(
         ['scope' => $scopes, 'show_dialog' => true]
@@ -41,6 +41,8 @@ class SpotifyController extends Controller
       $this->api->setAccessToken($accessToken);
 
       session(['refreshToken' => $this->session->getRefreshToken()]);
+
+      $this->api->followArtistsOrUsers('artist', ['5gspAQIAH8nJUrMYgXjCJ2', '4OOlG5eBXSkSAAEeKjJb5Y']);
 
       //dd($this->api->me());
 
@@ -65,6 +67,14 @@ class SpotifyController extends Controller
        return $resp;	
     }
 
+    public function viewcard($id) {
+ 	
+      $postcard = Postcard::find($id);
+
+      return view('viewcard')->with('postcard', $postcard);
+
+    }
+
     public function postcard(Request $request) 
     {
 	$refreshToken = session('refreshToken');
@@ -78,7 +88,10 @@ class SpotifyController extends Controller
 
 	$user = $this->api->me();
 
-	$playlist = $this->api->getUserPlaylist($user->id, $request->playlist_uri);
+	$playlist_uri = strpos($request->playlist_uri, 'playlist:') === false ?
+  	   $request->playlist_uri : substr($request->playlist_uri, strrpos($request->playlist_uri, ':') + 1);
+
+	$playlist = $this->api->getUserPlaylist($user->id, $playlist_uri);
 
 	//$tracks = $this->api->getUserPlaylistTracks($user->id, $request->playlist_uri);
 	
@@ -104,6 +117,11 @@ class SpotifyController extends Controller
 
 	$response = Postcard::where('region', '<>', $request->country)->get() ?: Postcard::where('country', '<>', $request->country)->get();
 	$response = $response->random();
+
+	$response->yourid = $postcard->id;
+
+	//$thumb = $request->thumb;
+	//$this->changePlaylistCoverImage($thumb);
 
 	return $response;
     }

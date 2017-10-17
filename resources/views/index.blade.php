@@ -3,17 +3,22 @@
 @section('content')
         <div class="section section1">
           <div class="center-wrap">
-            <p class="home-logo"><img src="img/cbkv-logo2.png" /></p>
-            <h2 class="title-text">Intercontinental Mixtape</h2>
-            <p class="description">Send and receive a digital postcard & mixtape with people around the world in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile</p>
-            <div class="next-btn"><a href="/connect"><i class="fa fa-spotify" aria-hidden="true"></i> CONNECT TO BEGIN</a></div>
-          </div>
+            <div class="center-inner">
+              <p class="home-logo"><img src="img/cbkv-logo2.png" /></p>
+              <h2 class="title-text">Intercontinental Mixtape</h2>
+              <p class="description">Send and receive a digital postcard & mixtape with people around the world in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile</p>
+              <div class="next-btn"><a href="/connect"><i class="fa fa-spotify" aria-hidden="true"></i> GET STARTED</a></div>
+            </div> <!-- end center inner -->
+          </div> <!-- end center wrap -->
           <div class="label-logos">
             <ul>
               <li><a href="#" target="blank"><img src="img/matador-small.jpg" /></a></li>
               <li><a href="#" target="blank"><img src="img/milk-small.jpg" /></a></li>
               <li><a href="#" target="blank"><img src="img/marathon-small.jpg" /></a></li>
             </ul>
+          </div>
+          <div class="bottom-terms">
+            <a href="#">Terms & Conditions</a>
           </div>
         </div>
 @endsection
