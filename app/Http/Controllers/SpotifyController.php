@@ -49,6 +49,8 @@ class SpotifyController extends Controller
       $user_id = $this->api->me()->id;
 
       $playlists = $this->api->getUserPlaylists($user_id, []);
+      
+      //$country = geoip()->getLocation()->country;
 
       return view('chooseplaylist')->with('access_token', $accessToken)
 	->with('playlists', $playlists);
@@ -98,8 +100,10 @@ class SpotifyController extends Controller
 	$link = "https://open.spotify.com/user/{$user->id}/playlist/{$request->playlist_uri}";
 	$email = $user->email;
 
+        $country = geoip()->getLocation()->country;
+
 	return view('postcard')->with('link', $link)->with('email', $email)
-		->with('playlist', $playlist);
+		->with('playlist', $playlist)->with('country', $country);
     }
 
     public function send(Request $request)

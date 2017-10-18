@@ -7,11 +7,11 @@
             <div class="center-inner">
               <div class="section-header">
                 <p class="section-number">2.</p>
-                <h2 class="section-title">Select Your Region</h2>
+                <h2 class="section-title">Select Your Region ({{ $country }})</h2>
               </div>
               <div class="center-content center-select-region">
                 <form class="country-select-form">
-                  <select class="crs-country" data-region-id="ABC"></select><br />
+                  <select class="crs-country" data-region-id="ABC" data-default-value="{{ $country }}"></select><br />
                   <select id="ABC" data-blank-option="Select region"></select>
                 </form>
               </div>
