@@ -36,7 +36,7 @@
 	      @endif
               <div class="playlist-box">
                 <p>Enter the URI of a custom playlist<span class="where">Where can I find this?</span></p>
-                <form action="/postcard" method="POST">
+                <form action="{{ URL::to('/postcard') }}" method="POST">
                   {{ csrf_field() }}
                   <input id="playlist_uri" type="text" class="uri-input" name="playlist_uri" /><br />
                   <input type="submit" value="SUBMIT" class="uri-submit next-btn-submit-playlist"/>

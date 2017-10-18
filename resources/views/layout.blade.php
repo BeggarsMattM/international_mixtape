@@ -29,12 +29,21 @@
           <a href="#">Stream Courtney and Kurt</a>
         </div>
         <div class="bottom-left corner">
+        <!--
           <div class="player">
             <iframe src="https://open.spotify.com/embed?uri=spotify:album:2p307RlVPc4fFl34IljlDh&theme=white" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
           </div>
+        -->
+          <div class="label-logos">
+            <ul>
+              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/matador-small.jpg" /></a></li>
+              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/milk-small.jpg" /></a></li>
+              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/marathon-small.jpg" /></a></li>
+            </ul>
+          </div>
         </div>
         <div class="bottom-right corner">
-          <a href="#">Terms & Conditions</a>
+          <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
         </div>
       </div>
 
@@ -63,14 +72,14 @@
           $('.location-card').remove();
 	  $('.postcard-right').append('<p class="location-card">' + region + ", " + country + '</p>');
   	  $.post({
-    	    url: "/search",
+    	    url: "{{ URL::to('/search') }}",
     	    data: { country: encodeURIComponent(country), region: encodeURIComponent(region), _token: '{{ csrf_token() }}' },
     	    dataType: "json"
 	  }).done(function (data) {
 	    console.log(data);
             if ($('#results').hasClass('slick-initialized')) { $('#results').slick('unslick').empty(); }
     	    for (i = 0; i < data.value.length; i++) {
-     	      $('#results').append('<div class="photo-slide-wrap"><div class="photo-slide" style="background:url(' + data.value[i].contentUrl + ') no-repeat center center; background-size:cover;" thumb="' + data.value[i].thumbnailUrl + '"><img src="/img/postcard-overlay.png"></div></div>');
+     	      $('#results').append('<div class="photo-slide-wrap"><div class="photo-slide" style="background:url(' + data.value[i].contentUrl + ') no-repeat center center; background-size:cover;" thumb="' + data.value[i].thumbnailUrl + '"><img src="{{ asset('/img/postcard-overlay.png') }}"></div></div>');
     	    }
   	  }).done(function (data) {
 	    $('#results').slick();
@@ -93,7 +102,7 @@
 	}
 	$('#send').on('click', function () {
 	  $.post({
-	    url: '/send',
+	    url: '{{ asset('/send') }}',
             data: {
 		country: $('.crs-country option:selected').val(),
 		region: $('#ABC option:selected').val(),
@@ -101,6 +110,7 @@
 		image: $('.slick-active .photo-slide').css('background-image'),
                 thumb: $('.slick-active .photo-slide').attr('thumb'),
 		email: $('#name').attr('email'),
+                from: $('#from').val(),
 		message: $('.notes').val(),
 	        playlist_name: $("#name").text(),
 	        tracklist: $("#tracklist").html(),
@@ -109,8 +119,9 @@
 	    dataType: 'json'
 	  }).done(function (data) {
 	    console.log('ya123'); console.log(data);
-            $('#sharethis').attr('href', 'http://46.101.76.84/postcard/' + data.id);
-	    $('#shareyours').attr('href', 'http://46.101.76.84/postcard/' + data.yourid);
+      $('.loading-animation').addClass('active');
+            $('#sharethis').attr('href', '{{ URL::to('/postcard') }}/' + data.id);
+	    $('#shareyours').attr('href', '{{ URL::to('/postcard') }}/' + data.yourid);
             $('#mail').css('background-image', data.image);
 	    $('.response-left').append('<a href="' + data.playlist_link + '">' + data.playlist_name + '</a>')
 		.append('<p>' + data.tracklist + '</p>');

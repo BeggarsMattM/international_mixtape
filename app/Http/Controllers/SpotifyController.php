@@ -114,6 +114,7 @@ class SpotifyController extends Controller
 	$postcard->playlist_link = $request->playlist_link;
 	$postcard->image = $request->image;
 	$postcard->email = $request->email;
+	$postcard->from = $request->from;
 	$postcard->message = $request->message;
 	$postcard->playlist_name = $request->playlist_name;
 	$postcard->tracklist = $request->tracklist;

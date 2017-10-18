@@ -7,7 +7,7 @@
             <div class="center-inner">
               <div class="section-header">
                 <p class="section-number">2.</p>
-                <h2 class="section-title">Select Your Region ({{ $country }})</h2>
+                <h2 class="section-title">Select Your Region</h2>
               </div>
               <div class="center-content center-select-region">
                 <form class="country-select-form">
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="bottom-terms">
-            <a href="#">Terms & Conditions</a>
+            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 
@@ -51,7 +51,10 @@
                   <div id="stamp">
                     <img src="img/ck-stamp.jpg" />
                   </div>
-                  <textarea class="notes">Message:</textarea>
+                  <div class="card-fill">
+                     <input id="from" name="from" class="from-input" type="text" value="From: " />
+                     <input class="notes" type="text" value="Message: " />
+                   </div>
                 </div>
               </div>
             </div>
@@ -59,7 +62,7 @@
           </div>
           </div>
           <div class="bottom-terms">
-            <a href="#">Terms & Conditions</a>
+            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 
@@ -77,7 +80,7 @@
             </div>
           </div>
           <div class="bottom-terms">
-            <a href="#">Terms & Conditions</a>
+            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 
@@ -123,7 +126,7 @@
         </div> <!-- end center inner -->
           </div>
           <div class="bottom-terms">
-            <a href="#">Terms & Conditions</a>
+            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 

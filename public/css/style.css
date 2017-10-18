@@ -52,11 +52,10 @@ body.loaded .section1 .center-inner {
 .label-logos {
   position: absolute;
   bottom: 20px;
-  width: 100%;
+  width: 200px;
   text-align: center;
   z-index: 1;
   left: 0px;
-  opacity: .3;
 }
 
 .label-logos ul {
@@ -86,6 +85,51 @@ body.loaded .section1 .center-inner {
   position: relative;
   z-index: 10;
   padding:30px 0px 20px;
+}
+
+.section1 .center-inner {
+  opacity: 0;
+  transform: scale(1.06);
+  -webkit-transition: all 800ms cubic-bezier(0.700, 0, 0.415, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+     -moz-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+       -o-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+          transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075); /* custom */
+}
+
+.section1.loaded .center-inner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.section3 .center-inner {
+  opacity: 0;
+  transform: scale(1.06);
+  -webkit-transition: all 800ms cubic-bezier(0.700, 0, 0.415, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+     -moz-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+       -o-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+          transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075); /* custom */
+}
+
+.section3.loaded .center-inner {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.share-section .center-inner {
+  opacity: 0;
+  transform: scale(1.06);
+  -webkit-transition: all 800ms cubic-bezier(0.700, 0, 0.415, 1); /* older webkit */
+  -webkit-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+     -moz-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+       -o-transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075);
+          transition: all 800ms cubic-bezier(0.700, -0.045, 0.415, 1.075); /* custom */
+}
+
+.share-section.loaded .center-inner {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .section6 .center-inner {
@@ -152,6 +196,12 @@ body.loaded .section1 .center-inner {
   cursor: pointer;
   margin:30px auto 30px;
   min-width:200px;
+  opacity: 1;
+  transition: all .2s ease;
+}
+
+#send.hide-send {
+  opacity: 0;
 }
 
 #send a {
@@ -186,6 +236,12 @@ body.loaded .section1 .center-inner {
 .fixed .corner {
   padding: 40px 50px;
   position: fixed;
+  opacity: .5;
+  transition: all .3s ease;
+}
+
+.fixed .corner:hover {
+  opacity: 1;
 }
 
 .fixed .top-left {
@@ -195,7 +251,7 @@ body.loaded .section1 .center-inner {
 }
 
 .fixed .top-left img {
-  width: 135px;
+  width: 125px;
 }
 
 .fixed .top-right {
@@ -207,8 +263,9 @@ body.loaded .section1 .center-inner {
 .fixed .top-right a {
   padding: 10px 25px;
   display: inline-block;
-  color: #fff;
-  background: #000;
+  color: #000;
+  border: 2px solid #000;
+  background: #fff;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -230,7 +287,7 @@ body.loaded .section1 .center-inner {
 
 .fixed .bottom-left {
   bottom:0px;
-  left:0px;
+  left:25px;
   z-index: 1;
 }
 
@@ -394,16 +451,18 @@ body.loaded .section1 .center-inner {
   width: 100%;
   max-width: 340px;
   border: 2px solid #000;
-  border-radius: 3px;
-  -webkit-appearance:none;
+  padding: 0px 13px;
+  border-radius: 20px;
+  -webkit-appearance: none;
   background: #fff;
-  margin:5px auto;
+  margin: 5px auto;
   font-family: "proxima-nova",sans-serif;
-  padding:5px;
+  padding: 5px 20px;
   font-size: 17px;
   font-size: 17px;
   font-family: 'Pangolin', cursive;
-  height:40px;
+  height: 40px;
+  text-align: center;
 }
 
 .postcard-wrap {
@@ -525,7 +584,7 @@ body.loaded .section1 .center-inner {
   font-size: 20px;
   padding: 0px 40px;
   margin: 25px auto 15px;
-  text-align: center;
+  text-align: left;
 }
 
 .playlist-title a {
@@ -598,6 +657,35 @@ body.loaded .section1 .center-inner {
   width: 176px;
 }
 
+.card-fill {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  width: calc(100% - 15px);
+  height: 120px;
+}
+
+.response-right .card-fill p {
+  border-bottom: 2px dashed #000;
+  margin:10px auto;
+  font-size: 17px;
+  width: calc(100% - 20px);
+  padding:5px 0px;
+}
+
+.from-input {
+  border: none;
+  line-height: 31px;
+  font-family: 'Pangolin', cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  width: calc(100% - 20px);
+  border-bottom: 2px dashed #000;
+  margin:10px auto;
+  font-size: 17px;
+}
+
 .notes {
   border: none;
   line-height: 31px;
@@ -605,12 +693,10 @@ body.loaded .section1 .center-inner {
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  padding: 8px;
-  position: absolute;
-  bottom: 10px;
-  left: 5px;
-  width: calc(100% - 15px);
-  height: 160px;
+  width: calc(100% - 20px);
+  border-bottom: 2px dashed #000;
+  margin:10px auto;
+  font-size: 17px;
 }
 
 .notes::-webkit-input-placeholder {
@@ -656,6 +742,15 @@ body.loaded .section1 .center-inner {
   transition: all 1s ease;
 }
 
+.share-section {
+  background: url(../img/earthbg3.jpg) no-repeat center center;
+  background-size: 90% auto;
+}
+
+.share-card {
+  padding-top:25px;
+}
+
 .section6.showcard .center-wrap {
     opacity: 1;
 }
@@ -666,6 +761,11 @@ body.loaded .section1 .center-inner {
   left:50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  visibility: hidden;
+}
+
+.loading-animation.active {
+  visibility: visible;
 }
 
 .loading-animation .ani-text {
@@ -873,6 +973,37 @@ body.loaded .section1 .center-inner {
   transform: translate(-50%,-50%);
 }
 
+.share-btns {
+  margin-top:30px;
+}
+
+.share-icon-list {
+  padding:0px;
+  margin:10px auto 0px;;
+  list-style: none;
+}
+
+.share-icon-list li {
+  margin:0px 5px;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+.share-icon-list li a {
+  color: #fff;
+  padding: 10px 13px;
+  width: 11px;
+  display: inline-block;
+  background: #000;
+  border-radius: 50%;
+}
+
+.share-section .center-wrap .next-btn {
+  margin:20px auto 5px;
+}
+
 @media screen and (max-width: 700px) {
   .where {
     display: none;
@@ -964,15 +1095,16 @@ body.loaded .section1 .center-inner {
     width: calc(100% - 10px);
   }
   .playlist-title {
-    padding:0px 10px;
-    font-size: 15px;
+    padding:0px 22px;
+    font-size: 14px;
+    margin:13px auto 5px;
   }
   #tracklist {
     font-size: 12px;
   }
   #tracklist ol {
     margin: 8px auto 15px;;
-    padding: 0px 10px 0px 25px;
+    padding: 0px 10px 0px 22px;
   }
   #tracklist a {
     display: block;
@@ -1040,6 +1172,16 @@ body.loaded .section1 .center-inner {
   .response-right p {
     margin: 0px 5px 10px;
     width: auto;
-    font-size: 10px;
+    font-size: 12px;
   }
-}
+  .response-right .card-fill {
+    height: 50px;
+  }
+  .response-right .card-fill p {
+    font-size: 12px;
+    padding:0px;
+  }
+  .share-section {
+    background-size: cover;
+  }
+}  

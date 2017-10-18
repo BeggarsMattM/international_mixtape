@@ -1,4 +1,9 @@
 $(document).ready(function() {
+  setTimeout(function(){
+    $('.section1').addClass('loaded');
+    $('.section3').addClass('loaded');
+    $('.share-section').addClass('loaded');
+  }, 150);
   $('.section-wrap').flickity({
     cellAlign: 'left',
     pageDots: false,
@@ -26,6 +31,7 @@ $(document).ready(function() {
     $('.flip-container').toggleClass('hover');
   });
   $('#send').click(function(e) {
+    $(this).addClass('hide-send');
     $('.slick-list').addClass('send-up');
     $('.slick-arrow').addClass('hide-arrows');
     $('.image-choose-header').addClass('hide-header');
