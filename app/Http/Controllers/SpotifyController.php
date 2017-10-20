@@ -120,7 +120,7 @@ class SpotifyController extends Controller
 	$postcard->tracklist = $request->tracklist;
 	$postcard->save();
 
-	$response = Postcard::where('region', '<>', $request->country)->get() ?: Postcard::where('country', '<>', $request->country)->get();
+	$response = Postcard::where('region', '<>', $request->region)->get() ?: Postcard::where('country', '<>', $request->country)->get();
 	$response = $response->random();
 
 	$response->yourid = $postcard->id;

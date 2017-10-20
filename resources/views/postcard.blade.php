@@ -12,15 +12,12 @@
               <div class="center-content center-select-region">
                 <form class="country-select-form">
                   <select class="crs-country" data-region-id="ABC" data-default-value="{{ $country }}"></select><br />
-                  <select id="ABC" data-blank-option="Select region"></select>
+                  <select id="ABC" class="region-select" data-blank-option="Select region"></select>
                 </form>
               </div>
   	          <div id="tracks"></div>
               <div class="next-btn1">CHOOSE A REGION</div>
             </div>
-          </div>
-          <div class="bottom-terms">
-            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 
@@ -52,17 +49,14 @@
                     <img src="img/ck-stamp.jpg" />
                   </div>
                   <div class="card-fill">
-                     <input id="from" name="from" class="from-input" type="text" value="From: " />
-                     <input class="notes" type="text" value="Message: " />
+                     <input id="from" name="from" class="from-input" type="text" value="From: " maxlength="66" />
+                     <input class="notes" type="text" value="Message: " maxlength="66" />
                    </div>
                 </div>
               </div>
             </div>
             <div class="next-btn">CONTINUE</div>
           </div>
-          </div>
-          <div class="bottom-terms">
-            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 
@@ -79,9 +73,6 @@
                 <div id="send">SEND YOUR CARD <i class="fa fa-paper-plane" aria-hidden="true"></i></div>
             </div>
           </div>
-          <div class="bottom-terms">
-            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
-          </div>
         </div>
 
         <div class="section section6">
@@ -92,41 +83,39 @@
           </div>
 
           <div class="center-wrap">
-          <div class="center-content">
-            <div class="center-inner">
-              <div class="section-header">
-                <h2 class="section-title">You've Got Mail</h2>
-              </div>
-            <div class="flip-container">
-              <div class="flipper-wrap flipper" ontouchstart="this.classList.toggle('hover');">
-                <div class="front" id="mail" style="background-size:cover;">
-                  <img src="img/postcard-overlay.png" />
+            <div class="center-content">
+              <div class="center-inner">
+                <div class="section-header">
+                  <h2 class="section-title">You've Got Mail</h2>
                 </div>
-                <div class="back">
-                  <div class="response-left">
-                    <div id="tracklist"></div>
-                  </div>
-                  <div class="response-right">
-                    <div id="stamp">
-                      <img src="img/ck-stamp.jpg" />
+                <div class="flip-container">
+                  <div class="flipper-wrap flipper" ontouchstart="this.classList.toggle('hover');">
+                    <div class="front" id="mail" style="background-size:cover;">
+                      <img src="img/postcard-overlay.png" />
+                    </div>
+                    <div class="back">
+                      <div class="response-left">
+                        <div id="tracklist"></div>
+                      </div>
+                      <div class="response-right">
+                        <div id="stamp">
+                          <img src="img/ck-stamp.jpg" />
+                        </div>
+                        <div class="card-fill"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+                <div class="end-btns-wrap">
+                  <!--
+                  <div class="flip-icon">FLIP <i class="fa fa-refresh" aria-hidden="true"></i></div><br />
+                  -->
+                  <div class="next-btn end-share"><a id="sharethis">Share this Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+                  <div class="next-btn end-share"><a id="shareyours">Share your Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div><br />
+                  <div class="next-btn end-share"><a href="http://beggarsdev.com/international_mixtape/public/">Start Over</a></div>
+                </div>
+              </div> <!-- end center inner -->
             </div>
-          </div>
-          <div class="end-btns-wrap">
-            <!--
-            <div class="flip-icon">FLIP <i class="fa fa-refresh" aria-hidden="true"></i></div><br />
-            -->
-            <div class="next-btn end-share"><a id="sharethis">Share this Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
-            <div class="next-btn end-share"><a id="shareyours">Share your Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div><br />
-            <div class="next-btn end-share">Start Over</div>
-          </div>
-        </div> <!-- end center inner -->
-          </div>
-          <div class="bottom-terms">
-            <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
           </div>
         </div>
 

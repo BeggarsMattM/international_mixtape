@@ -6,6 +6,12 @@
         <meta name="description" content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new collaborative album by Courtney Barnett and Kurt Vile.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta property="og:url"                content="http://mixtape.courtneybarnettandkurtvile.com" />
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="Intercontinental Mixtape" />
+        <meta property="og:description"        content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new album by Courtney Barnett and Kurt Vile." />
+        <meta property="og:image"              content="http://beggarsdev.com/international_mixtape/public/img/fb-share-image.jpg" />
+
         <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
         <!-- Place favicon.ico in the root directory -->
@@ -20,14 +26,43 @@
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
+      <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '2015209905380407',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.10'
+          });
+          FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+      </script>
 
       <div class="fixed">
         <div class="top-left corner">
-          <img src="{{ asset("img/spotify-blk.png") }}" alt="Spotify"/>
+          <a href="https://www.spotify.com/" target="blank"><img src="{{ asset("img/spotify-blk.png") }}" alt="Spotify"/></a>
+        </div>
+        <div class="top-middle">
+          <a href="http://courtneybarnettandkurtvile.com/"><img src="{{ asset("img/cb_kv_logo.png") }}" /></a>
         </div>
         <div class="top-right corner">
-          <a href="#">Stream Courtney and Kurt</a>
+          <a href="https://open.spotify.com/album/3gvo4nvimDdqA9c3y7Bptc" target="blank">Stream Courtney and Kurt</a>
         </div>
+      </div>
+
+        <div class="section-wrap">
+      	  @yield('content')
+        </div>
+
+      <footer>
         <div class="bottom-left corner">
         <!--
           <div class="player">
@@ -36,20 +71,16 @@
         -->
           <div class="label-logos">
             <ul>
-              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/matador-small.jpg" /></a></li>
-              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/milk-small.jpg" /></a></li>
-              <li><a href="#" target="blank"><img src="http://46.101.76.84/img/marathon-small.jpg" /></a></li>
+              <li><a href="http://matadorrecords.com/" target="blank"><img src="/international_mixtape/public/img/matador-small.png" /></a></li>
+              <li><a href="http://milk.milkrecords.com.au/" target="blank"><img src="/international_mixtape/public/img/milk-small.png" /></a></li>
+              <li><a href="http://marathonartists.com/" target="blank"><img src="/international_mixtape/public/img/marathon-small.png" /></a></li>
             </ul>
           </div>
         </div>
         <div class="bottom-right corner">
           <a href="http://beggars.com/group/privacy-policy" target="blank">Terms & Conditions</a>
         </div>
-      </div>
-
-        <div class="section-wrap">
-      	  @yield('content')
-        </div>
+      </footer>
 
 
         <!--script src="js/vendor/modernizr-{MODERNIZR_VERSION}.min.js"></script-->
@@ -123,10 +154,13 @@
             $('#sharethis').attr('href', '{{ URL::to('/postcard') }}/' + data.id);
 	    $('#shareyours').attr('href', '{{ URL::to('/postcard') }}/' + data.yourid);
             $('#mail').css('background-image', data.image);
-	    $('.response-left').append('<a href="' + data.playlist_link + '">' + data.playlist_name + '</a>')
+	    $('.response-left').append('<p class="playlist-title"><a href="' + data.playlist_link + '">' + data.playlist_name + '</a></p>')
 		.append('<p>' + data.tracklist + '</p>');
-            $('.response-right').append('<p>' + (data.message || '')+ '</p>')
-		.append('<p>Postcard received from ' + data.region + ' in ' + data.country + '</p>');
+            $('.card-fill')
+                .append('<p>' + (data.from || ' ')+ '</p>')
+                .append('<p>' + (data.message || ' ')+ '</p>');
+            $('.response-right')
+		.append('<p>' + data.region + ', ' + data.country + '</p>');
 	  });
 	});
 	</script>

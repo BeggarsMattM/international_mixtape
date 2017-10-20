@@ -49,9 +49,53 @@ $(document).ready(function() {
   $('.video-popup').click(function() {
     $(this).removeClass('active');
   });
+  $('.popup').click(function(event) {
+    var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = this.href,
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+
+    window.open(url, 'twitter', opts);
+
+    return false;
+  });
 });
 
-$(window).on('load', function () {
-     $('.section-wrap').flickity('reposition');
-     $(window).resize();
-});
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+    window.alert("Link Copied!");
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+function CopyLink() {
+  copyTextToClipboard(location.href);
+}
+
+document.getElementById('fbShareBtn').onclick = function() {
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: 'http://beggarsdev.com/international_mixtape/public/',
+  }, function(response){});
+}

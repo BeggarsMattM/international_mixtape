@@ -12,15 +12,18 @@
                   </div>
                   <div class="back">
                     <div class="response-left">
-                      <a href="{{ $postcard->playlist_link }}">{{ $postcard->playlist_name }}</a>
+                      <p class="playlist-title"><a href="{{ $postcard->playlist_link }}">{{ $postcard->playlist_name }}</a></p>
                       <div id="tracklist">
                   {!! $postcard->tracklist !!}
           </div>
                     </div>
                     <div class="response-right">
+                      <p>{{ $postcard->region }}, {{ $postcard->country }}</p>
                       <div id="stamp"><img src="../img/ck-stamp.jpg"></div>
-          <p>{{ $postcard->message }}</p>
-          <p>Postcard received from {{ $postcard->region }} in {{ $postcard->country }}</p>
+                      <div class="card-fill">
+                        <p>{{ $postcard->from }}</p>
+                        <p>{{ $postcard->message }}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -28,13 +31,12 @@
               <div class="share-btns">
                   <ul class="share-icon-list">
                     <li>SHARE: </li>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-tumblr" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                    <li><a id="fbShareBtn"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a class="twitter popup" href="http://twitter.com/share"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a onclick="CopyLink()"><i class="fa fa-link" aria-hidden="true"></i></a></li>
                   </ul>
                 </div>
-              <div class="next-btn"><a href="#">CREATE YOUR OWN CARD</a></div>
+              <div class="next-btn"><a href="http://beggarsdev.com/international_mixtape/public/">CREATE A NEW CARD</a></div>
             </div>
           </div>
         </div>

@@ -49,13 +49,32 @@ body.loaded .section1 .center-inner {
 }
 */
 
-.label-logos {
-  position: absolute;
-  bottom: 20px;
-  width: 200px;
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top:0px;
+  padding:25px 0px;
+  background: #000;
+}
+
+footer .bottom-left {
   text-align: center;
   z-index: 1;
-  left: 0px;
+  margin: 10px auto 15px;
+}
+
+footer .bottom-right {
+  margin:10px auto;
+  font-size: 14px;
+}
+
+footer .bottom-right a {
+  color:#fff;
+  text-decoration: none;
+}
+
+footer .bottom-right a:hover {
+  text-decoration: underline;
 }
 
 .label-logos ul {
@@ -66,11 +85,11 @@ body.loaded .section1 .center-inner {
 
 .label-logos li {
   display: inline-block;
-  margin:0px 7px;
+  margin:0px 10px;
 }
 
 .label-logos li img {
-  width: 40px;
+  width: 50px;
 }
 
 .center-wrap {
@@ -84,7 +103,7 @@ body.loaded .section1 .center-inner {
 .center-inner {
   position: relative;
   z-index: 10;
-  padding:30px 0px 20px;
+  padding:70px 0px 70px;
 }
 
 .section1 .center-inner {
@@ -133,7 +152,7 @@ body.loaded .section1 .center-inner {
 }
 
 .section6 .center-inner {
-  padding:10px 0px 20px;
+  padding:50px 0px 20px;
 }
 
 .center-wrap .next-btn {
@@ -147,7 +166,7 @@ body.loaded .section1 .center-inner {
   font-size: 13px;
   border-radius: 20px;
   cursor: pointer;
-  margin: 30px auto 30px;
+  margin: 30px auto 0px;
   min-width: 200px;
   padding: 10px;
 }
@@ -168,7 +187,7 @@ body.loaded .section1 .center-inner {
 }
 
 .center-wrap .next-btn.end-share {
-  margin: 15px auto 0px;
+  margin: 18px 5px 0px;
 }
 
 .end-btns-wrap {
@@ -234,9 +253,8 @@ body.loaded .section1 .center-inner {
 }
 
 .fixed .corner {
-  padding: 40px 50px;
-  position: fixed;
-  opacity: .5;
+  padding: 25px 30px;
+  position: absolute;
   transition: all .3s ease;
 }
 
@@ -254,6 +272,28 @@ body.loaded .section1 .center-inner {
   width: 125px;
 }
 
+.fixed .top-middle {
+  position: absolute;
+  padding: 35px 30px;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  z-index: 2;
+}
+
+.fixed .top-middle a {
+  transition: all .2s ease;
+}
+
+.fixed .top-middle a:hover {
+  opacity: 1;
+}
+
+.fixed .top-middle img {
+  width: 100%;
+}
+
 .fixed .top-right {
   top:0px;
   right:0px;
@@ -265,7 +305,7 @@ body.loaded .section1 .center-inner {
   display: inline-block;
   color: #000;
   border: 2px solid #000;
-  background: #fff;
+  background: transparent;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -317,6 +357,7 @@ body.loaded .section1 .center-inner {
 
 .section-header {
   margin-bottom: 25px;
+  margin-top:0px;
 }
 
 .section-number {
@@ -424,7 +465,7 @@ body.loaded .section1 .center-inner {
   border:0px;
   margin:20px auto;
   position: absolute;
-  top: calc(50% + 165px);
+  top: calc(50% + 185px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -463,6 +504,16 @@ body.loaded .section1 .center-inner {
   font-family: 'Pangolin', cursive;
   height: 40px;
   text-align: center;
+}
+
+.country-select-form select option:first-child {
+  background: #fff;
+  color:#000;
+}
+
+.country-select-form select option {
+  background: #000;
+  color:#fff;
 }
 
 .postcard-wrap {
@@ -671,6 +722,8 @@ body.loaded .section1 .center-inner {
   font-size: 17px;
   width: calc(100% - 20px);
   padding:5px 0px;
+  height: 24px;
+  overflow-y: scroll;
 }
 
 .from-input {
@@ -684,6 +737,7 @@ body.loaded .section1 .center-inner {
   border-bottom: 2px dashed #000;
   margin:10px auto;
   font-size: 17px;
+  -webkit-appearance:none;
 }
 
 .notes {
@@ -697,6 +751,7 @@ body.loaded .section1 .center-inner {
   border-bottom: 2px dashed #000;
   margin:10px auto;
   font-size: 17px;
+  -webkit-appearance:none;
 }
 
 .notes::-webkit-input-placeholder {
@@ -984,7 +1039,7 @@ body.loaded .section1 .center-inner {
 }
 
 .share-icon-list li {
-  margin:0px 5px;
+  margin:0px 3px;
   display: inline-block;
   font-weight: 600;
   letter-spacing: 1px;
@@ -998,6 +1053,7 @@ body.loaded .section1 .center-inner {
   display: inline-block;
   background: #000;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .share-section .center-wrap .next-btn {
@@ -1017,21 +1073,22 @@ body.loaded .section1 .center-inner {
     width: 250px;
   }
   .title-text {
-    font-size: 50px;
+    font-size: 44px;
     line-height: 50px;
-    margin:20px auto;
+    margin:13px auto;
   }
   .description {
     font-size: 14px;
     margin-top:15px;
   }
-
   .fixed .top-left {
-    left:50%;
-    transform: translateX(-50%);
-    width: 100%;
-    text-align: center;
-    padding: 20px 0px;
+    padding:33px 40px;
+  }
+  .fixed .top-middle {
+    right:0px;
+    left:auto;
+    transform: none;
+    padding:40px;
   }
   .bottom-terms {
     right: auto;
@@ -1044,6 +1101,7 @@ body.loaded .section1 .center-inner {
     width: 100%;
     position: absolute;
     bottom: 0px;
+    opacity: .5;
   }
   .bottom-terms a {
     color:#000;
@@ -1117,26 +1175,30 @@ body.loaded .section1 .center-inner {
     font-size: 15px;
     width: auto;
   }
-  .notes {
-    font-size: 15px;
-    line-height: auto;
-    height:100px;
+  .notes,
+  .from-input {
+    font-size: 14px;
+    margin:2px auto;
+  }
+  .postcard-right .card-fill {
+    height: 100px;
+    bottom: 0px;
   }
   .photo-slide {
-    height: 160px;
-    width: 250px;
+    height: 200px;
+    width: 276px;
   }
   .photo-slide img {
     width: 100%;
   }
   .photo-slide-wrap {
-    height: 160px;
-    width: 250px;
+    height: 200px;
+    width: 300px;
     overflow: hidden;
   }
   #results {
-    height: 160px;
-    width: 280px;
+    height: 215px;
+    width: 300px;
   }
   .slick-next {
     right:-20px;
@@ -1145,12 +1207,12 @@ body.loaded .section1 .center-inner {
     left:-20px;
   }
   .flip-container, .front, .back {
-    height: 160px;
-    width: 280px;
+    height: 215px;
+    width: 300px;
   }
   .flipper-wrap {
-    height: 160px;
-    width: 280px;
+    height: 215px;
+    width: 300px;
   }
   .response-left > a {
     font-size: 12px;
@@ -1176,12 +1238,15 @@ body.loaded .section1 .center-inner {
   }
   .response-right .card-fill {
     height: 50px;
+    bottom:0px;
   }
   .response-right .card-fill p {
     font-size: 12px;
-    padding:0px;
+    padding: 0px;
+    height: 16px;
+    margin: 2px auto;
   }
   .share-section {
     background-size: cover;
   }
-}  
+}
