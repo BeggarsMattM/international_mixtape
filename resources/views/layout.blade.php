@@ -6,11 +6,12 @@
         <meta name="description" content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new collaborative album by Courtney Barnett and Kurt Vile.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta property="fb:app_id"             content="2015209905380407" />
         <meta property="og:url"                content="http://mixtape.courtneybarnettandkurtvile.com" />
         <meta property="og:type"               content="article" />
         <meta property="og:title"              content="Intercontinental Mixtape" />
         <meta property="og:description"        content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new album by Courtney Barnett and Kurt Vile." />
-        <meta property="og:image"              content="http://beggarsdev.com/international_mixtape/public/img/fb-share-image.jpg" />
+        <meta property="og:image"              content="http://beggarsdev.com/international_mixtape/public/img/fb-share-image.png" />
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -54,7 +55,20 @@
           <a href="http://courtneybarnettandkurtvile.com/"><img src="{{ asset("img/cb_kv_logo.png") }}" /></a>
         </div>
         <div class="top-right corner">
-          <a href="https://open.spotify.com/album/3gvo4nvimDdqA9c3y7Bptc" target="blank">Stream Courtney and Kurt</a>
+          <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DWUheBGiz3rlx" target="blank">
+            <div class="top-right-inner">
+              <span><i class="fa fa-spotify" aria-hidden="true"></i> This is: Courtney Barnett</span>
+              <span><i class="fa fa-spotify" aria-hidden="true"></i> This is: Courtney Barnett</span>
+            </div>
+          </a>
+        </div>
+        <div class="top-right corner top-right-lower">
+          <a href="https://open.spotify.com/user/spotify/playlist/37i9dQZF1DX6jgu09eXX7G" target="blank">
+            <div class="top-right-inner">
+              <span><i class="fa fa-spotify" aria-hidden="true"></i> This is: Kurt Vile</span>
+              <span><i class="fa fa-spotify" aria-hidden="true"></i> This is: Kurt Vile</span>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -98,7 +112,7 @@
 	$("#ABC").change(function () {
 	  var country = $('.crs-country option:selected').val();
   	  var region = $("#ABC option:selected").val();
-	  $('.next-btn1').text("CONTINUE");
+	  $('.next-btn1').text("CONTINUE").addClass('next-btn-style');
           $('#results').html('');
           $('.location-card').remove();
 	  $('.postcard-right').append('<p class="location-card">' + region + ", " + country + '</p>');
@@ -165,11 +179,15 @@
 	});
 	</script>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-870879-24"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-870879-24');
+    </script>
     </body>
 </html>

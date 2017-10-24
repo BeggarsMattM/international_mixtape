@@ -61,7 +61,9 @@ class SpotifyController extends Controller
     {
        $region = $request->region ?: "London";
        $country = $request->country ?: "UK";
-       $ch = curl_init("https://api.cognitive.microsoft.com/bing/v5.0/images/search?count=5&q=beautiful+scenery+$country+$region");
+       $path = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?count=5&q=beautiful+scenery+$region";
+       if ( ! in_array($region, ["London", "New%20York"])) $path .= "+$country";
+       $ch = curl_init($path);
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
        curl_setopt($ch, CURLOPT_HTTPHEADER, ['Ocp-Apim-Subscription-Key: 06b1a291f77a4a2298fd642a091ae067']);
        $resp = curl_exec($ch);
@@ -93,11 +95,20 @@ class SpotifyController extends Controller
 	$playlist_uri = strpos($request->playlist_uri, 'playlist:') === false ?
   	   $request->playlist_uri : substr($request->playlist_uri, strrpos($request->playlist_uri, ':') + 1);
 
-	$playlist = $this->api->getUserPlaylist($user->id, $playlist_uri);
+	if (strpos($request->playlist_uri, 'playlist:') === false) {
+	  $userid = $user->id;
+          $uri = $request->playlist_uri;
+	} else {
+	  $parts = explode(':', $request->playlist_uri);
+	  $userid = $parts[2];
+	  $uri = $parts[4];
+        }
+
+	$playlist = $this->api->getUserPlaylist($userid, $playlist_uri);
 
 	//$tracks = $this->api->getUserPlaylistTracks($user->id, $request->playlist_uri);
 	
-	$link = "https://open.spotify.com/user/{$user->id}/playlist/{$request->playlist_uri}";
+	$link = "https://open.spotify.com/user/{$userid}/playlist/{$uri}";
 	$email = $user->email;
 
         $country = geoip()->getLocation()->country;
@@ -120,7 +131,7 @@ class SpotifyController extends Controller
 	$postcard->tracklist = $request->tracklist;
 	$postcard->save();
 
-	$response = Postcard::where('region', '<>', $request->region)->get() ?: Postcard::where('country', '<>', $request->country)->get();
+	$response = Postcard::where('country', '<>', $request->country)->get() ?: Postcard::where('region', '<>', $request->region)->get();
 	$response = $response->random();
 
 	$response->yourid = $postcard->id;

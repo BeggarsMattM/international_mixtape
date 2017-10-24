@@ -14,7 +14,7 @@
                 <p>Choose From Your Public Playlists</p>
                 <ol class="playlist-list">
 		  @foreach ($playlists->items as $playlist)
-		  <li id="{{ $playlist->id }}" class="public_playlist">{{ $playlist->name }}</li>
+		  <li id="{{ $playlist->uri }}" class="public_playlist">{{ $playlist->name }}</li>
 		   @endforeach
                   <!--li>1. Playlist Name</li>
                   <li>2. Playlist Name</li>
