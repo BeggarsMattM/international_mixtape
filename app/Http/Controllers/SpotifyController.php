@@ -61,11 +61,11 @@ class SpotifyController extends Controller
     {
        $region = $request->region ?: "London";
        $country = $request->country ?: "UK";
-       $path = "https://api.cognitive.microsoft.com/bing/v5.0/images/search?count=5&q=beautiful+scenery+$region";
+       $path = "https://api.cognitive.microsoft.com/bing/v7.0/images/search?count=5&q=beautiful+scenery+$region";
        if ( ! in_array($region, ["London", "New%20York"])) $path .= "+$country";
        $ch = curl_init($path);
        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-       curl_setopt($ch, CURLOPT_HTTPHEADER, ['Ocp-Apim-Subscription-Key: 06b1a291f77a4a2298fd642a091ae067']);
+       curl_setopt($ch, CURLOPT_HTTPHEADER, ['Ocp-Apim-Subscription-Key: 49ea6b92b9bc4c8b9209f9b808b2f547']);
        $resp = curl_exec($ch);
        curl_close($ch);
        return $resp;	

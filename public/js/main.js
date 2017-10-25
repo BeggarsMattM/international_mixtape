@@ -96,6 +96,6 @@ document.getElementById('fbShareBtn').onclick = function() {
   FB.ui({
     method: 'share',
     display: 'popup',
-    href: 'http://beggarsdev.com/international_mixtape/public/',
+    href: 'http://mixtape.courtneybarnettandkurtvile.com/',
   }, function(response){});
 }

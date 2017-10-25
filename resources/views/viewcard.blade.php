@@ -8,7 +8,7 @@
               <div class="flip-container" style="transform: translate(0,0);">
                 <div class="flipper-wrap flipper" ontouchstart="this.classList.toggle('hover');">
                   <div class="front" id="mail" style='background-size:cover; background-image:{!! $postcard->image !!}'>
-                    <img src="/international_mixtape/public/img/postcard-overlay.png" />
+                    <img src="/img/postcard-overlay.png" />  
                   </div>
                   <div class="back">
                     <div class="response-left">

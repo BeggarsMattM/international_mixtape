@@ -3,15 +3,15 @@
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Courtney Barnett and Kurt Vile - Intercontinental Mixtape</title>
-        <meta name="description" content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new collaborative album by Courtney Barnett and Kurt Vile.">
+        <meta name="description" content="Share a mixtape with a stranger in a foriegn land in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta property="fb:app_id"             content="2015209905380407" />
         <meta property="og:url"                content="http://mixtape.courtneybarnettandkurtvile.com" />
         <meta property="og:type"               content="article" />
         <meta property="og:title"              content="Intercontinental Mixtape" />
-        <meta property="og:description"        content="Send and receive a digital a digital postcard and mixtape with people around the world in the spirit of the new album by Courtney Barnett and Kurt Vile." />
-        <meta property="og:image"              content="http://beggarsdev.com/international_mixtape/public/img/fb-share-image.png" />
+        <meta property="og:description"        content="Share a mixtape with a stranger in a foriegn land in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile." />
+        <meta property="og:image"              content="http://mixtape.courtneybarnettandkurtvile.com/img/share-image.jpg" />
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -22,11 +22,24 @@
         <link rel="stylesheet" href="{{ asset("css/main.css") }}">
         <link rel="stylesheet" href="{{ asset("css/style.css") }}">
         <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NF7XQLH');</script>
+        <!-- End Google Tag Manager -->
+
         <script src="https://use.typekit.net/dga7jfu.js"></script>
         <script src="https://use.fontawesome.com/f254e2fc06.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF7XQLH"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
       <script>
         window.fbAsyncInit = function() {
           FB.init({
@@ -85,9 +98,9 @@
         -->
           <div class="label-logos">
             <ul>
-              <li><a href="http://matadorrecords.com/" target="blank"><img src="/international_mixtape/public/img/matador-small.png" /></a></li>
-              <li><a href="http://milk.milkrecords.com.au/" target="blank"><img src="/international_mixtape/public/img/milk-small.png" /></a></li>
-              <li><a href="http://marathonartists.com/" target="blank"><img src="/international_mixtape/public/img/marathon-small.png" /></a></li>
+              <li><a href="http://matadorrecords.com/" target="blank"><img src="/img/matador-small.png" /></a></li>
+              <li><a href="http://milk.milkrecords.com.au/" target="blank"><img src="/img/milk-small.png" /></a></li>
+              <li><a href="http://marathonartists.com/" target="blank"><img src="/img/marathon-small.png" /></a></li>
             </ul>
           </div>
         </div>
