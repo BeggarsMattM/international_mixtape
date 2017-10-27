@@ -8,7 +8,7 @@
               <div class="flip-container" style="transform: translate(0,0);">
                 <div class="flipper-wrap flipper" ontouchstart="this.classList.toggle('hover');">
                   <div class="front" id="mail" style='background-size:cover; background-image:{!! $postcard->image !!}'>
-                    <img src="/img/postcard-overlay.png" />  
+                    <img src="/img/postcard-overlay.png" />
                   </div>
                   <div class="back">
                     <div class="response-left">
@@ -36,7 +36,7 @@
                     <li><a onclick="CopyLink()"><i class="fa fa-link" aria-hidden="true"></i></a></li>
                   </ul>
                 </div>
-              <div class="next-btn"><a href="http://beggarsdev.com/international_mixtape/public/">CREATE A NEW CARD</a></div>
+              <div class="next-btn"><a href="http://mixtape.courtneybarnettandkurtvile.com">CREATE A NEW CARD</a></div>
             </div>
           </div>
         </div>

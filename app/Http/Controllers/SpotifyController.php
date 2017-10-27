@@ -141,4 +141,9 @@ class SpotifyController extends Controller
 
 	return $response;
     }
+
+    public function random() {
+       $postcard = Postcard::all()->random();
+       return $postcard;
+    }
 }	  

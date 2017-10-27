@@ -112,6 +112,9 @@
                   -->
                   <div class="next-btn end-share"><a id="sharethis">Share this Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
                   <div class="next-btn end-share"><a id="shareyours">Share your Card <i class="fa fa-external-link" aria-hidden="true"></i></a></div><br />
+                  <!--
+                  <div class="next-btn end-share"><a id="randomize">Get A New Card <i class="fa fa-refresh" aria-hiden="true"></i></a></div>
+                -->
                   <div class="next-btn end-share"><a href="http://beggarsdev.com/international_mixtape/public/">Start Over</a></div>
                 </div>
               </div> <!-- end center inner -->

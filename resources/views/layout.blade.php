@@ -13,8 +13,16 @@
         <meta property="og:description"        content="Share a mixtape with a stranger in a foriegn land in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile." />
         <meta property="og:image"              content="http://mixtape.courtneybarnettandkurtvile.com/img/share-image.jpg" />
 
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@kurtvile" />
+        <meta name="twitter:creator" content="@matadorrecords" />
+        <meta property="og:url" content="http://mixtape.courtneybarnettandkurtvile.com/" />
+        <meta property="og:title" content="Courtney Barnett and Kurt Vile Present: Intercontinental Mixtape" />
+        <meta property="og:description" content="Share a mixtape with a stranger in a foriegn land in the spirit of the new album 'Lotta Sea Lice' by Courtney Barnett and Kurt Vile." />
+        <meta property="og:image" content="http://mixtape.courtneybarnettandkurtvile.com/img/share-image.jpg" />
+
         <link rel="manifest" href="site.webmanifest">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css" />
@@ -176,7 +184,7 @@
 	    },
 	    dataType: 'json'
 	  }).done(function (data) {
-	    console.log('ya123'); console.log(data);
+	    //console.log('ya123'); console.log(data);
       $('.loading-animation').addClass('active');
             $('#sharethis').attr('href', '{{ URL::to('/postcard') }}/' + data.id);
 	    $('#shareyours').attr('href', '{{ URL::to('/postcard') }}/' + data.yourid);
@@ -189,6 +197,20 @@
             $('.response-right')
 		.append('<p>' + data.region + ', ' + data.country + '</p>');
 	  });
+	});
+
+	$('#randomize').on('click', function() {
+	 $.get("/random", function (data) {
+	   $('#sharethis').attr('href', '{{ URL::to('/postcard') }}/' + data.id);
+           $('#mail').css('background-image', data.image);
+           $('.response-left').empty().append('<p class="playlist-title"><a href="' + data.playlist_link + '">' + data.playlist_name + '</a></p>')
+           	.append('<p>' + data.tracklist + '</p>');
+            $('.response-right p').remove();
+            $('.response-right').append('<p>' + data.region + ', ' + data.country + '</p>');
+            $('.card-fill').empty()
+                .append('<p>' + (data.from || ' ')+ '</p>')
+                .append('<p>' + (data.message || ' ')+ '</p>');
+	  }); 
 	});
 	</script>
 

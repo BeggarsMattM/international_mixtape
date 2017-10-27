@@ -28,3 +28,5 @@ Route::post('postcard', 'SpotifyController@postcard');
 Route::get('postcard/{id}', 'SpotifyController@viewcard');
 
 Route::post('send', 'SpotifyController@send');
+
+Route::get('random', 'SpotifyController@random');
